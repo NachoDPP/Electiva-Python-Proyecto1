@@ -327,12 +327,12 @@ class ActionController(Controller):
                     masters_count += 1
 
             # Normalizamos
-            norm_juniors = int((juniors_count / total) * 100)
-            norm_seniors = int((seniors_count / total) * 100)
-            norm_masters = int((masters_count / total) * 100)
+            norm_juniors = (juniors_count / total) * 100
+            norm_seniors = (seniors_count / total) * 100
+            norm_masters = (masters_count / total) * 100
 
             self.__report_view.render_histogram(
-                'Histograma Agrupados Etarios',
+                'Histograma Agrupados por Etarios',
                 ['Junior', 'Senior', 'Master'],
                 [str(juniors_count), str(seniors_count), str(masters_count)],
                 [norm_juniors, norm_seniors, norm_masters]

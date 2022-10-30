@@ -39,7 +39,7 @@ class ReportView(View):
 
         self.render()
 
-    def render_histogram(self, title: str, headers: Iterable[str], values: Iterable[str], data: Iterable[int]):
+    def render_histogram(self, title: str, headers: Iterable[str], values: Iterable[str], data: Iterable[float]):
         """Método para imprimir por consola un histograma con escala en procentaje y base 100"""
         # Limpiamos consola
         self._console.clear()
@@ -61,7 +61,7 @@ class ReportView(View):
         for i in range(len(headers)):
             separator = max_size - (len(headers[i]) + len(values[i]))
             self._console.print_message(
-                f'{headers[i]} ({values[i]}):{" " * separator} | {"*" * data[i]}')
+                f'{headers[i]} {round(data[i], 2):<3.2f}% ({values[i]}):{" " * separator} | {"*" * int(round(data[i], 0))}')
 
         self._console.print_message(row_separator)
         self._console.break_line()
