@@ -1,4 +1,4 @@
-# Proyecto1_Python_UCAB
+# Electiva-Python-Proyecto1
 Primer proyecto de la materia electiva de Python de Ingeniería Informática en la Universidad Católica Andrés Bello.
 
 ## Descripción
