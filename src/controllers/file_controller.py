@@ -23,5 +23,4 @@ class FileController(Controller):
         """Permite cargar un archivo en función del nombre y extensión dada"""
         file_name = StringInput('Nombre del archivo: ', margin=4)
         self.__competitors_repository.load(file_name)
-        self._router.navigate(
-            '/file', 'Se ha cargado el archivo exitosamente!')
+        self._router.navigate('/file', 'Se ha cargado el archivo exitosamente!')

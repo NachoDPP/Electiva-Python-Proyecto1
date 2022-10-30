@@ -1,4 +1,6 @@
 from typing import Iterable
+from src.DTOs.converter import TryParseInt
+from src.exceptions.value_exception import ValueException
 from src.DTOs.competitor_dto import CompetitorDto
 from src.exceptions.file_exception import FileException
 from src.repositories.repository import Repository
@@ -34,16 +36,16 @@ class CompetitorsRepository(Repository):
 
                     self.__competitors.append(
                         CompetitorDto(
-                            int(competitor[0].strip()),
+                            TryParseInt(competitor[0].strip()),
                             competitor[1].strip(),
                             competitor[2].strip(),
                             competitor[3].strip(),
                             competitor[4].strip(),
                             competitor[5].strip(),
-                            int(competitor[6].strip()),
-                            int(competitor[7].strip()),
-                            int(competitor[8].strip()),
-                            int(competitor[9].rstrip())
+                            TryParseInt(competitor[6].strip()),
+                            TryParseInt(competitor[7].strip()),
+                            TryParseInt(competitor[8].strip()),
+                            TryParseInt(competitor[9].rstrip())
                         )
                     )
 
@@ -54,7 +56,10 @@ class CompetitorsRepository(Repository):
                 f'No se encontró el archivo de nombre \"{file_name}\"')
         except ValueError as e:
             self.__competitors = save
-            raise FileException(f'Error en la [FILA #{current_line}]: ${e}')
+            raise FileException(f'Error en la [FILA #{current_line}]: {e}')
+        except ValueException as e:
+            self.__competitors = save
+            raise FileException(f'Error en la [FILA #{current_line}]: {e}')
         except FileException as e:
             self.__competitors = save
             raise e

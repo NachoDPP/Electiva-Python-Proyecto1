@@ -1,4 +1,5 @@
 from datetime import time
+from src.DTOs.converter import TryParseTime
 
 from src.exceptions.value_exception import ValueException
 
@@ -14,7 +15,7 @@ class CompetitorDto:
         self.middle_name = middle_name
         self.sex = sex
         self.age = age
-        self.finish_time = time(hours, mins, segs)
+        self.finish_time = TryParseTime(hours, mins, segs)
 
     @property
     def id(self):

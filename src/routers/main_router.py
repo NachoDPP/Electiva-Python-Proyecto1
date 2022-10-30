@@ -33,10 +33,12 @@ class MainRouter(Router):
             # Si hay error lo imprimimos
             if self._error:
                 self.__console.print_error(self._error)
+                self._error = None
 
             # Si hay mensaje lo imprimimos
             if self._message:
                 self.__console.print_success(self._message)
+                self._message = None
 
             # Manejador de excepciones
             try:
