@@ -10,20 +10,16 @@ class ActionView(View):
         option = 0
 
         self._console.header('ADMINISTRADOR DE ACCIONES', '#')
-        self._console.option_message(
-            '1', 'Lista con la totalidad de participantes')
+        self._console.option_message('1', 'Lista con la totalidad de participantes')
         self._console.option_message('2', 'Cantidad total de participantes')
-        self._console.option_message(
-            '3', 'Cantidad de participantes por grupo etario')
+        self._console.option_message('3', 'Cantidad de participantes por grupo etario')
         self._console.option_message('4', 'Cantidad de participantes por sexo')
         self._console.option_message('5', 'Ganadores por grupo etario')
         self._console.option_message('6', 'Ganadores por sexo')
         self._console.option_message('7', 'Ganadores por grupo etario y sexo')
         self._console.option_message('8', 'Ganador general')
-        self._console.option_message(
-            '9', 'Histograma de participante por grupo etario')
-        self._console.option_message(
-            '10', 'Promedio de tiempo por grupo etario y sexo')
+        self._console.option_message('9', 'Histograma de participante por grupo etario')
+        self._console.option_message('10', 'Promedio de tiempo por grupo etario y sexo')
         self._console.option_message('0', 'Regresar')
         self._console.break_line()
         self._console.print_decorator()

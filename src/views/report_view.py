@@ -51,6 +51,7 @@ class ReportView(View):
 
         row_separator = "-" * 100
 
+        # Calculamos el tamaño de los headers
         max_size = len(headers[0]) + len(values[0])
         for i in range(len(headers)):
             if (len(headers[i]) + len(values[i]) > max_size):
@@ -58,6 +59,7 @@ class ReportView(View):
 
         self._console.print_message(row_separator)
 
+        # Imprimimos el histograma
         for i in range(len(headers)):
             separator = max_size - (len(headers[i]) + len(values[i]))
             self._console.print_message(

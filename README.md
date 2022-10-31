@@ -1,4 +1,4 @@
-# Electiva-Python-Proyecto1
+# Electiva-Python-Proyecto1 - Manuel Da Pena
 Primer proyecto de la materia electiva de Python de Ingeniería Informática en la Universidad Católica Andrés Bello.
 
 ## Descripción

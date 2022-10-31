@@ -25,6 +25,7 @@ class ActionController(Controller):
     def find_all(self):
         """Lista con la totalidad de participantes (tabla)"""
 
+        # Mostramos todos los participantes cargados en el repositorio en formato tabla
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -46,6 +47,7 @@ class ActionController(Controller):
     def count_all(self):
         """Cantidad total de participantes (una línea)"""
 
+        # Imprimimos el total de participantes si existen
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -57,6 +59,7 @@ class ActionController(Controller):
     def count_by_etarios(self):
         """Cantidad de participantes por grupo etario (tabla, solo el grupo y la cantidad)"""
 
+        # Recorremos los competidores, agrupandolos por etarios con su total
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -84,6 +87,7 @@ class ActionController(Controller):
     def count_by_sex(self):
         """Cantidad de participantes por sexo (línea, sólo el grupo y la cantidad)"""
 
+        # Recorremos todos los competidores, los clasificamos por sexo y contabilizamos
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -106,6 +110,7 @@ class ActionController(Controller):
     def winners_by_etarios(self):
         """Ganadores por grupo etario (tabla)"""
 
+        # Agrupamos los competidores por etarios y calculamos el ganador
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -158,6 +163,7 @@ class ActionController(Controller):
     def winners_by_sex(self):
         """Ganadores por sexo (tabla)"""
 
+        # Recorremos todos los competidores clasificandolos por sexo y buscamos el ganador por categoría
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -201,6 +207,7 @@ class ActionController(Controller):
     def winners_by_sex_and_etarios(self):
         """Ganadores por grupo etario y sexo (tabla)"""
 
+        # Recorremos todos los competidores, clasificandolos por etarios y sexo, buscamos el ganador
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -288,6 +295,7 @@ class ActionController(Controller):
     def main_winner(self):
         """Ganador general (línea)"""
 
+        # Buscamos el ganador general en función de todos los competidores cargados
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -309,6 +317,7 @@ class ActionController(Controller):
     def histogram_by_etarios(self):
         """Histograma de participante por grupo etario"""
 
+        # Recorremos todos los competidores y clasificamos por grupo etario para luego calcular su proporción.
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -341,6 +350,7 @@ class ActionController(Controller):
     def average_by_etarios_and_sex(self):
         """Promedio de tiempo por grupo etario y sexo"""
 
+        # Recorremos, clasificamos y calculamos promedio del tiempo llevandolo a segundos y viceversa
         if (len(self.__competitors_repository.competitors) == 0):
             self.__report_view.render_messages(['No se encontraron registros'])
         else:
@@ -432,6 +442,7 @@ class ActionController(Controller):
         return True if competitor.age > 40 else False
 
     def __find_winner(self, competitors: Iterable[CompetitorDto]):
+        """Dado un iterable de competidores calcula el ganador"""
         if (len(competitors) == 0):
             return None
 
@@ -444,6 +455,7 @@ class ActionController(Controller):
         return winner
 
     def __time_average(self, competitors: Iterable[CompetitorDto]):
+        """Dado un iterable de competidores calcula el promedio del tiempo"""
         if (len(competitors) == 0):
             return ''
 
