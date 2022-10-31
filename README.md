@@ -44,6 +44,3 @@ La aplicación debe ser capaz de suministrar información al usuario cuando carg
 - Cantidad de columnas incorrecto (las líneas tienen la información indicada anteriormente).
 
 Al producirse cualquier de los fallos mencionados debe notificar al usuario con un mensaje y permitiéndole repetir la acción de forma correcta.
-
-## Problemas y ayudas
-En caso de presentar algún tipo de problema con el código, el data set o necesitar alguna ayuda para resolver una duda, por favor revisen los issues para ver si alguien anteriormente tuvo la misma duda, y sino, pueden crear uno nuevo sin problema.
