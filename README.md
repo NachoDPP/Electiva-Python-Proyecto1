@@ -1,5 +1,5 @@
 # Electiva-Python-Proyecto1 - Manuel Da Pena
-Proyecto 1 de la materia electiva de Programación con Python de Ingeniería Informática en la Universidad Católica Andrés Bello.
+Proyecto Práctico 1 de la materia electiva Programación con Python de Ingeniería Informática en la Universidad Católica Andrés Bello.
 
 ## Descripción
 
